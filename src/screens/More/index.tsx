@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet} from 'react-native';
 import {View, Text, Button, ButtonText} from '../../components/Themed';
 import {connect, useDispatch} from 'react-redux';
 import {logoutUser} from '../../redux/Authentication/authentication.action';
 import moment from 'moment';
 import {scale} from 'react-native-size-matters';
+import {useIsFocused} from '@react-navigation/core';
 
 function More(props) {
+  const [time, setTime] = useState(props?.auth?.user?.loggedInAt);
+  const isFocused = useIsFocused();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTime(props?.auth?.user?.loggedInAt);
+  }, [isFocused]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
@@ -15,7 +23,7 @@ function More(props) {
         <Text style={{fontWeight: 'bold', textTransform: 'capitalize'}}>
           {props?.auth?.user?.username}
         </Text>
-        , {'\n'} You logged in {moment(props?.auth?.user?.loggedInAt).fromNow()}{' '}
+        , {'\n'} You logged in {moment(time).fromNow()}{' '}
       </Text>
       <Button onPress={() => dispatch(logoutUser())}>
         <ButtonText>Logout</ButtonText>
