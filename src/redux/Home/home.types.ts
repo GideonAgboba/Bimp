@@ -1,0 +1,2 @@
+export const SET_ONBOARDED = 'SET_ONBOARDED';
+export const SET_CATEGORIES = 'SET_CATEGORIES';
