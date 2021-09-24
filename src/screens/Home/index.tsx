@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Text} from 'react-native';
-import {connect} from 'react-redux';
-import {useDispatch} from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 
 function Home(props) {
   const dispatch = useDispatch();

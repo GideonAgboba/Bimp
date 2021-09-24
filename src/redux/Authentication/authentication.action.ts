@@ -6,6 +6,13 @@ export const loginUser = (user) => ({
   type: authActionTypes.LOGIN_REQUEST,
   payload: user,
 });
+
+// logout
+export const logoutUser = () => ({
+  type: authActionTypes.LOGOUT_USER,
+  payload: {},
+});
+
 // export const login = (userData, _success, _error) => dispatch => {
 //   Axios.post(`/auth/login`, userData)
 //     .then(response => {

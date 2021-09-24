@@ -85,7 +85,7 @@ function BottomTabNavigator(props) {
       <Tab.Screen
         name="TabThree"
         options={{
-          tabBarLabel: 'Extra Settings',
+          tabBarLabel: 'Profile',
           tabBarIcon: ({color}) => (
             <MoreSvg width={25} height={25} fill={color} size={25} />
           ),
@@ -156,7 +156,7 @@ function TabThreeNavigator() {
     <TabThreeStack.Navigator>
       <TabThreeStack.Screen
         options={{
-          headerTitle: 'More',
+          headerTitle: 'Profile',
         }}
         name="More"
         component={More}

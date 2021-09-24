@@ -38,7 +38,9 @@ function RootNavigator({auth}) {
       {auth && !auth?.isAuthenticated ? (
         <Stack.Screen name="Login" component={Login} />
       ) : null}
-      <Stack.Screen name="Root" component={BottomTabNavigator} />
+      {auth && auth?.isAuthenticated ? (
+        <Stack.Screen name="Root" component={BottomTabNavigator} />
+      ) : null}
     </Stack.Navigator>
   );
 }
